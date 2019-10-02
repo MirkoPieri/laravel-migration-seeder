@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Place;
+use App\Employee;
 
 use Illuminate\Http\Request;
 
-class PlaceController extends Controller
+class EmployeeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class PlaceController extends Controller
      */
     public function index()
     {
-        $place = Place::all();
+        $employee = Employee::all();
 
-        return view('page.placeIndex', compact('place'));
+        return view('page.employeeIndex', compact('employee'));
     }
 
     /**
@@ -26,7 +26,7 @@ class PlaceController extends Controller
      */
     public function create()
     {
-        return view('page.create');
+        return view('page.employeeCreate');
     }
 
     /**
@@ -38,15 +38,15 @@ class PlaceController extends Controller
     public function store(Request $request)
     {
       $validatedData = $request->validate([
-        "name" => "required",
-        "address" => "required",
-        "city" => "required",
-        "nation" => "required"
+        'firtname' => 'required',
+        'lastname' => 'required',
+        'birthDay' => 'required',
+        'jobtitle' => 'required',
+        'salary' => 'required'
       ]);
-      $place = Place::create($validatedData);
-      return redirect('/place');
 
-
+      $employee = Employee::create($validatedData);
+      return redirect('/employee');
     }
 
     /**

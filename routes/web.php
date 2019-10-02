@@ -11,8 +11,20 @@
 |
 */
 
-Route::get('/', 'PlaceController@index') -> name('place.Index');
+Route::get('/', function () {
+    return view('page.index');
+}) -> name('index.home');
+
+// place
+Route::get('/place', 'PlaceController@index') -> name('place.Index');
 
 Route::get('/create', 'PlaceController@create') -> name('place.create');
 
-Route::post('/', 'PlaceController@store') -> name('place.store');
+Route::post('/place', 'PlaceController@store') -> name('place.store');
+
+// employee
+Route::get('/employee', 'EmployeeController@index') -> name('employee.index');
+
+Route::get('/create/employee', 'EmployeeController@create') -> name('employee.create');
+
+Route::post('/employee', 'EmployeeController@store') -> name('employee.store');

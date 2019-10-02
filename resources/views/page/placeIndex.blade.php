@@ -2,8 +2,12 @@
 
 @section('content')
 
-  <a href="{{ route('place.create') }}">CREATE NEW ITEM</a>
+
   <div class="container">
+    <div class="button">
+      <a href="{{ route('place.create') }}">CREATE NEW ITEM</a>
+    </div>
+  
     @foreach ($place as $value)
       <div class="box">
         <p>{{$value -> name}}</p>

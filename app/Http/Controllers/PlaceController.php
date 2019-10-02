@@ -43,8 +43,10 @@ class PlaceController extends Controller
         "city" => "required",
         "nation" => "required"
       ]);
-      // $employee = Place::create($validatedData);
+      $place = Place::create($validatedData);
       return redirect('/');
+
+
     }
 
     /**

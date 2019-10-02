@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PlaceController@index') -> name('place.Index');
+
+Route::get('/create', 'PlaceController@create') -> name('place.create');
+
+Route::post('/', 'PlaceController@store') -> name('place.store');

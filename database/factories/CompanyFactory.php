@@ -8,9 +8,9 @@ use App\Company;
 
 $factory->define(Company::class, function (Faker $faker) {
     return [
-        'name' => $faker -> unique() -> company,
-        'phone' => $faker -> unique() -> tollFreePhoneNumber,
-        'mail' => $faker -> unique() -> companyEmail,
-        'website' => $faker -> unique() -> domainName
+        'name' => $faker -> company,
+        'phone' => $faker -> tollFreePhoneNumber,
+        'mail' => $faker -> companyEmail,
+        'website' => $faker -> domainName
     ];
 });

@@ -23,8 +23,8 @@ div.container .link a img {
 div.box {
   border: 2px solid black;
   width: 100%;
-  height: 100px;
-  padding: 50px 20px;
+  height: 50px;
+  padding: 10px 20px;
 }
 
 div.box p {

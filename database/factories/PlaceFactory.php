@@ -8,9 +8,9 @@ use App\Place;
 
 $factory->define(Place::class, function (Faker $faker) {
     return [
-        'name' => $faker -> unique() -> company,
-        'address' => $faker -> unique() -> streetAddress,
-        'city' => $faker -> unique() -> city,
-        'nation' => $faker -> unique() -> country
+        'name' => $faker -> company,
+        'address' => $faker -> streetAddress,
+        'city' => $faker -> city,
+        'nation' => $faker -> country
     ];
 });

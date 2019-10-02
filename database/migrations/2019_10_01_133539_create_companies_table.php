@@ -15,10 +15,10 @@ class CreateCompaniesTable extends Migration
     {
         Schema::create('companies', function (Blueprint $table) {
           $table->bigIncrements('id');
-          $table->string('name') -> unique();
-          $table->string('phone') -> unique();
-          $table->string('mail') -> unique();
-          $table->string('website') -> unique();
+          $table->string('name');
+          $table->string('phone');
+          $table->string('mail');
+          $table->string('website');
           $table->timestamps();
         });
     }

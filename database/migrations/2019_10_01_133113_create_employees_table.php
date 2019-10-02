@@ -15,11 +15,11 @@ class CreateEmployeesTable extends Migration
     {
         Schema::create('employees', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('firtname') -> unique();
-            $table->string('lastname') -> unique();
-            $table->date('birthDay') -> unique();
-            $table->string('jobTitle') -> unique();
-            $table->float('salary') -> unique();
+            $table->string('firtname');
+            $table->string('lastname');
+            $table->date('birthDay');
+            $table->string('jobTitle');
+            $table->float('salary');
             $table->timestamps();
         });
     }

@@ -41,7 +41,7 @@ class EmployeeController extends Controller
         'firtname' => 'required',
         'lastname' => 'required',
         'birthDay' => 'required',
-        'jobtitle' => 'required',
+        'jobTitle' => 'required',
         'salary' => 'required'
       ]);
 
@@ -68,7 +68,9 @@ class EmployeeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $employee = Employee::findOrFail($id);
+
+        return view('page.employeeEdit', compact('employee'));
     }
 
     /**
@@ -80,7 +82,16 @@ class EmployeeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $validatedData = $request->validate([
+        'firtname' => 'required',
+        'lastname' => 'required',
+        'birthDay' => 'required',
+        'jobtitle' => 'required',
+        'salary' => 'required'
+      ]);
+
+        Employee::whereId($id) -> update($validatedData);
+        return redirect('/employee');
     }
 
     /**
@@ -91,6 +102,9 @@ class EmployeeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $employee = Employee::findOrFail($id);
+        $employee -> delete();
+
+          return redirect('/employee'); 
     }
 }

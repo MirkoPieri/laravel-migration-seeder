@@ -17,8 +17,12 @@
         <p>{{$value -> firtname}}</p>
         <p>{{$value -> lastname}}</p>
         <p>{{$value -> birthDay}}</p>
-        <p>{{$value -> jobtitle}}</p>
+        <p>{{$value -> jobTitle}}</p>
         <p>{{$value -> salary}}</p>
+        <div class="bott">
+          <a href="{{ route('employee.edit', $value -> id) }}">EDIT</a>
+          <a href="{{ route('employee.destroy', $value -> id) }}">DELETE</a>
+        </div>
       </div>
     @endforeach
   </div>

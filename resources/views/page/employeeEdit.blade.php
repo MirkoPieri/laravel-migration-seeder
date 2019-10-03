@@ -9,28 +9,28 @@
     </div>
 
       <div class="edit">
-        <form method="post" action="{{ route('employee.store') }}">
+        <form method="post" action="{{ route('employee.update', $employee -> id) }}">
           @csrf
           @method('POST')
           <div class="form-group">
             <label for="firtname">FirstName</label>
-            <input type="text" name="firtname" value="">
+            <input type="text" name="firtname" value="{{$employee -> firtname}}">
           </div>
           <div class="form-group">
             <label for="lastname">LastName</label>
-            <input type="text" name="lastname" value="">
+            <input type="text" name="lastname" value="{{$employee -> lastname}}">
           </div>
           <div class="form-group">
             <label for="birthDay">BirthDay</label>
-            <input type="text" name="birthDay" value="">
+            <input type="text" name="birthDay" value="{{$employee -> birthDay}}">
           </div>
           <div class="form-group">
-            <label for="jobTitle">JobTitle</label>
-            <input type="text" name="jobTitle" value="">
+            <label for="jobtitle">JobTitle</label>
+            <input type="text" name="jobtitle" value="{{$employee -> jobTitle}}">
           </div>
           <div class="form-group">
             <label for="salary">Salary</label>
-            <input type="text" name="salary" value="">
+            <input type="text" name="salary" value="{{$employee -> salary}}">
           </div>
           <button type="submit">Save</button>
         </form>

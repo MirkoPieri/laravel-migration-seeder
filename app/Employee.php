@@ -10,7 +10,7 @@ class Employee extends Model
     'firtname',
     'lastname',
     'birthDay',
-    'jobtitle',
+    'jobTitle',
     'salary'
   ];
 }
